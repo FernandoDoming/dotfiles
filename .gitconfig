@@ -1,0 +1,13 @@
+[alias]
+
+		# View the log in as a graph
+    graph = log --pretty=oneline --decorate --graph --abbrev-commit
+
+		# Log abbreviated
+		l = log --pretty=oneline --abbrev-commit
+
+    # View the current working tree status using the short format
+    s = status -s
+
+    # Show the diff between the latest commit and the current state
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"

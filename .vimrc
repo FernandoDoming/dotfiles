@@ -6,13 +6,13 @@ filetype off                  " required
 " Key mapping
 let mapleader = ","
 "" Window navigation
-nmap <silent> <leader>w :wincmd k<CR>
-nmap <silent> <leader>s :wincmd j<CR>
-nmap <silent> <leader>a :wincmd h<CR>
-nmap <silent> <leader>d :wincmd l<CR>
+nmap <silent> <C-w> :wincmd k<CR>
+nmap <silent> <C-s> :wincmd j<CR>
+nmap <silent> <C-a> :wincmd h<CR>
+nmap <silent> <C-d> :wincmd l<CR>
 "" Buffer navigation
-nmap <silent> <leader>n :bnext<CR>
-nmap <silent> <leader>p :bprevious<CR>
+nmap <silent> <C-m> :bnext<CR>
+nmap <silent> <C-n> :bprevious<CR>
 "" Misc
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!  " Save as root with :W
 command Wq :execute ':silent w !sudo tee % > /dev/null' | :edit! | :q  " Save as root and exit :Wq
@@ -35,6 +35,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
 Plugin 'mhinz/vim-startify'
