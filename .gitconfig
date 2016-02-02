@@ -1,6 +1,7 @@
+<<<<<<< Updated upstream
 [alias]
 
-		# View the log in as a graph
+		# Print the log as a graph 
     graph = log --pretty=oneline --decorate --graph --abbrev-commit
 
 		# Log abbreviated
@@ -11,3 +12,18 @@
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+		# Solve conflicts quickly
+		theirs = "git merge --strategy-option theirs"
+		ours   = "git merge --strategy-option ours"
+
+		# Tools
+		dt = "diftool"
+		mt = "mergetool"
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
