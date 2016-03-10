@@ -17,7 +17,7 @@
 		ours   = "git merge --strategy-option ours"
 
 		# Tools
-		dt = "diftool"
+		dt = "difftool"
 		mt = "mergetool"
 [diff]
 	tool = vimdiff
