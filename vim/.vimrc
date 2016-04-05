@@ -62,6 +62,7 @@ set hlsearch
 set incsearch
 set title
 set wildignore=*.swp,*.class
+set encoding=utf-8
 
 " Functions
 function! ToggleMouse()
