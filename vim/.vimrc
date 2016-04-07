@@ -18,6 +18,8 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!  " Save as root 
 command Wq :execute ':silent w !sudo tee % > /dev/null' | :edit! | :q  " Save as root and exit :Wq
 nmap <silent> <leader>m :call ToggleMouse()<CR>
 
+let g:user_emmet_leader_key='<C-l>'
+
 " Pretty colors
 set t_Co=256
 colorscheme zenburn
@@ -39,6 +41,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
 Plugin 'mhinz/vim-startify'
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
