@@ -60,12 +60,15 @@ endif
 " Editor settings
 syntax on
 set tabstop=2
+set expandtab		" Use spaces instead of tabs
 set showmatch
 set hlsearch
 set incsearch
 set title
 set wildignore=*.swp,*.class
 set encoding=utf-8
+set autoindent
+set cindent
 
 " Functions
 function! ToggleMouse()
