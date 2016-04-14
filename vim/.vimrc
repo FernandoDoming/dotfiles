@@ -11,11 +11,12 @@ nmap <silent> <C-s> :wincmd j<CR>
 nmap <silent> <C-a> :wincmd h<CR>
 nmap <silent> <C-d> :wincmd l<CR>
 "" Buffer navigation
-nmap <silent> <C-m> :bnext<CR>
-nmap <silent> <C-n> :bprevious<CR>
+nmap <silent> <C-m> :bnext!<CR>
+nmap <silent> <C-n> :bprevious!<CR>
 "" Misc
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!  " Save as root with :W
 command Wq :execute ':silent w !sudo tee % > /dev/null' | :edit! | :q  " Save as root and exit :Wq
+map <C-k> :NERDTreeToggle<CR>
 nmap <silent> <leader>m :call ToggleMouse()<CR>
 
 let g:user_emmet_leader_key='<C-l>'
@@ -42,6 +43,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
 Plugin 'mhinz/vim-startify'
 Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
