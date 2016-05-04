@@ -27,4 +27,4 @@ if [ ! -d "~/dotfiles" ]; then
 fi
 cp ./dotfiles/vim/.vimrc ~/
 
-vim -c "VundleInstall"
+vim -c VundleInstall
