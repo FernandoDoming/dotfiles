@@ -1,5 +1,16 @@
 #!/bin/bash
 
+if [ "$(dpkg-query -l vim)" != "0" ]; then
+  echo "Vim is not installed. Installing ..."
+
+  if [ "$(id -u)" != "0" ]; then
+    echo "Sorry, you are not root. Run as root to install vim"
+    exit 1
+  else
+    apt-get install -y vim
+  fi
+fi
+
 mkdir -p ~/.vim/colors
 mkdir -p ~/.vim/plugin
 
