@@ -10,4 +10,10 @@ curl http://www.vim.org/scripts/download_script.php?src_id=9223 -o ~/.vim/plugin
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+cd ~/
+if [ ! -d "~/dotfiles" ]; then
+	git clone https://github.com/FernandoDoming/dotfiles.git
+fi
+cp ./dotfiles/vim/.vimrc ~/
+
 vim -c "VundleInstall"
