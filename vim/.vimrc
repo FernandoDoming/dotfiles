@@ -71,6 +71,8 @@ set wildignore=*.swp,*.class
 set encoding=utf-8
 set autoindent
 set cindent
+set cursorline
+set autoread
 
 " Functions
 function! ToggleMouse()
