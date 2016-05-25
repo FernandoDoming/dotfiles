@@ -73,6 +73,8 @@ set autoindent
 set cindent
 set cursorline
 set autoread
+set history=10000
+set scrolloff=3
 
 " Functions
 function! ToggleMouse()
