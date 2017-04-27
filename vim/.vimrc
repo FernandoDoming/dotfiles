@@ -61,7 +61,7 @@ endif
 
 " Editor settings
 syntax on
-set tabstop=2
+set tabstop=4 shiftwidth=4
 set expandtab		" Use spaces instead of tabs
 set showmatch
 set hlsearch
