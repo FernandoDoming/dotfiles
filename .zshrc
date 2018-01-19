@@ -53,9 +53,9 @@ ZSH_THEME="random"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git bundler osx rake ruby rails pip python adb autojump battery colorize zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
+export ZSH=/Users/fdd/.oh-my-zsh/
+source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -90,12 +90,41 @@ if [ -f $file ]; then
   echo ""
 fi
 
-ping -c 1 8.8.8.8 2>/dev/null | lolcat
-
 echo "\n"
-if [[ $? == 0 ]]; then
-  curl http://wttr.in/ 2>/dev/null | head -n 7 | lolcat
-  echo ""
-fi
+curl http://wttr.in/ 2>/dev/null -m 1 | head -n 7 | lolcat
+echo ""
 
+function wttr () {
+    curl "wttr.in/$1" 2>/dev/null | lolcat 2>/dev/null
+}
+
+function ggwp () {
+    if [ -z "$1" ]
+    then
+        echo "Usage: ggwp <version>"
+    else
+        echo $1 > version
+        git add version && git commit -m "Bump version to $1"
+        git tag -a $1 -m $1
+        git push origin master
+    fi
+}
+
+eval $(thefuck --alias)
+alias sed=gsed
+alias src=source
 alias fucking=sudo
+alias fk=fuck
+
+function amiup() {
+    urls=("http://fernandodominguez.me" "http://blog.fernandodominguez.me")
+    for url in "${urls[@]}"
+    do
+        curl $url 2>/dev/null | grep "Fernando Domínguez" &> /dev/null
+        if [ $? -eq 0 ]; then
+            echo "$url is up"
+        else
+            echo "$url is down"
+        fi
+    done
+}
